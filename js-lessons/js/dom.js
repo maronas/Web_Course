@@ -28,6 +28,7 @@ function addLi(){
     var li = document.createElement("li");
     var button = document.createElement("button");
     var li_id = "item" + findLastLiId();
+    var btn_id = "btn_delete" + findLastLiId();
 
     button.appendChild(document.createTextNode("Delete"));
     button.setAttribute("class", "btn_delete");
