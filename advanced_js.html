@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Advanced arrays</h1>
+    <div>
+        <pre>
+            <code id="code">
+                <h1>
+                    WTF???
+                </h1>
+            </code>
+        </pre>
+    </div>
+
+    <button onclick="backHome()">Back home</button>
+    <script src="advanced_js/1.js"></script>
+    <script>
+        function loadJSFileContent(filename) {
+            $.get(filename, function (data) {
+                $("#code").text(data);
+            });
+        }
+        loadJSFileContent("file:///Users/maronas/Web_Course/advanced_js/1.js");
+    </script>
+</body>
+</html>
