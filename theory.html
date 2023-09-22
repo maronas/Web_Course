@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theory</title>
+    <link rel="stylesheet" href="style/default.css">
+</head>
+<body>
+    <div id="content">
+        <pre>
+            <h3>Reference type</h3>
+            var object1 = { value: 10};
+            var object2 = object1;
+            var object3 = { value: 10};
+
+            If you are creating new object and asigning another object as parent(object2 = object1), than they are same and in aligment they will return TRUE, because of the same box created.
+            But when you are creating same object, but by yourself asigning values(object1 & object 3 on example), in aligment you will have FALSE, because they are different objects, different created.
+            On another hand, when you aligning values from that objects (object1.value === object3.value) you will receive in answear TRUE, because of values.
+
+            <h3>Context vs scope</h3>
+            Making objects, selecting where currently program is.
+
+            <code>
+                const object4 = {
+                    a: function(){
+                        console.log(this);
+                    }
+                }
+            </code>
+            Where `this` will return where is program at the moment(by default, without this function will receive Window, and other variables are after coma, Window.a ... etc)
+
+            <h3>Instation</h3>
+            Its all about classes, they extensions
+            <code>
+            class Player {
+                constructor(name, type){
+                    console.log(this);
+                    this.name = name;
+                    this.type = type;
+                }
+                introduce(){
+                    console.log(`Hi I am ${this.name}, I'm a ${this.type}!`);
+                }
+            }
+            
+            class Wizard extends Player{
+                constructor(name, type){
+                    super(name, type)
+                }
+                play(){
+                    console.log(`Weeee... I'm a ${this.type}`);
+                }
+            }
+            
+            const wizard1 = new Wizard('Shelly', 'Healer');
+            const wizard2 = new Wizard('Shawn', 'Dark Magic');
+            </code>
+        </pre>
+    </div>
+
+    <br><br>
+    <button onclick="backHome()">Back home</button>
+    <script src="JS/default.js"></script>
+    <script src="JS/theory.js"></script>
+</body>
+</html>
